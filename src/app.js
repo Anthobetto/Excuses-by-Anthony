@@ -1,25 +1,23 @@
-let who = ["The dog", "My grandma", "The mailman", "My bird"];
-let action = ["ate", "peed", "crushed", "broke"];
-let what = ["my homework", "my phone", "the car"];
-let when = [
-  "before the class",
-  "when I was sleeping",
-  "while I was exercising",
-  "during my lunch",
-  "while I was praying"
-];
+window.onload = function() {
+  function excuseGenerator() {
+    let who = ["The dog", "My grandma", "The mailman", "My bird"];
+    let action = ["ate", "peed", "crushed", "broke"];
+    let what = ["my homework", "my phone", "the car"];
+    let when = [
+      "before the class",
+      "when I was sleeping",
+      "while I was exercising",
+      "during my lunch",
+      "while I was praying"
+    ];
 
-function AnExcuse(QWho, Qaction, Qwhat, Qwhen) {
-  QWho = who[Math.floor(Math.random() * who.length)];
-  Qaction = action[Math.floor(Math.random() * action.length)];
-  Qwhat = what[Math.floor(Math.random() * what.length)];
-  Qwhen = when[Math.floor(Math.random() * when.length)];
+    let oddWho = who[Math.floor(Math.random() * who.length)];
+    let oddAction = action[Math.floor(Math.random() * action.length)];
+    let oddWhat = what[Math.floor(Math.random() * what.length)];
+    let oddWhen = when[Math.floor(Math.random() * when.length)];
 
-  return QWho + " " + Qaction + " " + Qwhat + " " + Qwhen;
-}
+    return oddWho + " " + oddAction + " " + oddWhat + " " + oddWhen;
+  }
 
-function OnLoad() {
-  document.getElementById("excuse").innerHTML = AnExcuse();
-}
-
-window.onload = OnLoad();
+  document.getElementById("excuse").innerHTML = excuseGenerator();
+};
